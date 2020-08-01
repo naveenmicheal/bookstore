@@ -1,0 +1,24 @@
+[
+	{
+		"id" :"pa1",
+		"name":"ProductA",
+		"price" :"35",
+		"info" :"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris",
+		"img":"product.png"
+	},
+	{
+		"id" :"pa2",
+		"name":"ProductB",
+		"price" :"55",
+		"info" :"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris",
+		"img":"product.png"
+	},
+	{
+		"id" :"pa3",
+		"name":"ProductC",
+		"price" :"75",
+		"info" :"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris",
+		"img":"product.png"
+	}
+]
+
