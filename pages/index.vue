@@ -3,6 +3,7 @@
   <navbar/>
   <hero/>
   <products/>
+  <footbar/>
   </div>
 </template>
 
@@ -11,13 +12,15 @@
 import navbar from '~/components/navbar'
 import hero from '~/components/hero'
 import products from '~/components/products'
+import footbar from '~/components/footbar'
 export default {
   name: 'Home',
 
   components: {
     navbar,
     hero,
-    products
+    products,
+    footbar
   }
 }
 </script>
