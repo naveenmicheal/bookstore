@@ -2,7 +2,7 @@
     <b-navbar id="navbar" shadow>
         <template slot="brand">
             <b-navbar-item tag="router-link" :to="{ path: '/' }">
-            Wired Store
+            WIRED STORE
             </b-navbar-item>
         </template>
         <template slot="end">
