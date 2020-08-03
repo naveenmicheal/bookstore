@@ -16,11 +16,12 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Wired Store',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: ' Choose from new collection of Watches. Buy Wrist Watches for men, women & kids at best price from Wired Store .' }
+      { hid: 'description', name: 'description', content: ' Choose from new collection of Watches. Buy Wrist Watches for men, women & kids at best price from Wired Store .' },
+      {property:'og:image',content:'icon.png'}
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
