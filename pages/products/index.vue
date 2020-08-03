@@ -88,6 +88,16 @@
 .card{
 	box-shadow: 0px 1px 6px grey;
 }
+.page-enter-active,
+.page-leave-active {
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
 </style>
 
 <script type="text/javascript">
@@ -99,6 +109,6 @@
 				products : storedata
 			}
 		},
-		
+		transition: "default"
 	}
 </script>

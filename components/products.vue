@@ -30,6 +30,9 @@
 
 
 		</div>
+		<nuxt-link to="/products">
+						<b-button class="viewall"  type="is-primary" expanded >View All Products</b-button>			
+			</nuxt-link>
 	</div>
 </template>
 
@@ -53,13 +56,17 @@
 	/*background-color: grey;*/
 /*	min-height: 250px;
 	max-height: 300px;*/
-	margin-right: 3px;
+	margin-right: 1px;
 }
 .card a{
 	margin-top:10px;
 }
 .title{
 	margin-bottom: 10px;
+}
+button.button.viewall.is-primary.is-fullwidth{
+	margin: auto;
+	width: 50%;
 }
 </style>
 

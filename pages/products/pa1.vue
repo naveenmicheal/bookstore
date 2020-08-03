@@ -35,7 +35,7 @@
 		<h1 class="title">{{productname}}</h1>
 		<h3 class="title">{{price}}</h3>
 		<p class="subtitle">{{info}}</p>
-		<a  :href="buylink"><b-button class="buybutton" type="is-primary">Buy Now</b-button></a>
+		<a target="_blank"  :href="buylink"><b-button class="buybutton" type="is-primary">Buy Now</b-button></a>
 
 	</div>
 </div>
@@ -80,7 +80,7 @@
 				price :"73rs",
 				points :['one','two','three'],
 				info :"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariaturrum.",
-				buylink : 'https://google.com',
+				buylink : 'https://rzp.io/l/EVY6mt3',
 				image:['http://localhost:3000/products/img1.jpeg','http://localhost:3000/products/img2.jpeg'],
 				indicator: true,
 				indicatorBackground: false,
