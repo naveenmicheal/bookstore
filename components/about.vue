@@ -6,7 +6,7 @@
        Address
       </h1>
       <h2 class="has-text-centered subtitle">
-        No 0033
+        No-0033
       </h2>
       <h2 class="has-text-centered subtitle">
         Abc Street 
@@ -16,6 +16,9 @@
       </h2>
       <h2 class=" has-text-centered subtitle">
         <a href="987654321">987654321</a>
+      </h2>
+      <h2 class=" has-text-centered subtitle">
+        <a href="#">name@example.com</a>
       </h2>
     </div>
   </div>

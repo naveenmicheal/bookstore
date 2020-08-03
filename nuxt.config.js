@@ -20,7 +20,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: ' Choose from new collection of Watches Online in India. Buy Wrist Watches for men, women & kids at best price from Wired Store .' }
+      { hid: 'description', name: 'description', content: ' Choose from new collection of Watches. Buy Wrist Watches for men, women & kids at best price from Wired Store .' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -48,6 +48,7 @@ export default {
   */
   buildModules: [
   ],
+
   /*
   ** Nuxt.js modules
   */
@@ -56,7 +57,21 @@ export default {
     'nuxt-buefy',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/pwa',
   ],
+
+    pwa: {
+  icon: {
+    iconSrc:'./static/icon.png',
+  },
+  manifest: {
+    name: 'Re-act-time',
+    lang: 'en',
+    start_url:"/",
+    theme_color:"#34495e",
+  }
+
+},
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
@@ -68,8 +83,8 @@ export default {
   */
   build: {
   },
-  server :{
-    host:"0.0.0.0",
-    port:3000
-  }
+  // server :{
+  //   host:"0.0.0.0",
+  //   port:3000
+  // }
 }
