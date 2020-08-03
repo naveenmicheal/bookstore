@@ -57,21 +57,7 @@ export default {
     'nuxt-buefy',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa',
   ],
-
-    pwa: {
-  icon: {
-    iconSrc:'./static/icon.png',
-  },
-  manifest: {
-    name: 'Re-act-time',
-    lang: 'en',
-    start_url:"/",
-    theme_color:"#34495e",
-  }
-
-},
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
