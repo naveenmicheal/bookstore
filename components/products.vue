@@ -14,7 +14,7 @@
 						</div>
 						<div class="card-content">
 							<h1 class=" title is-3">{{product['name']}}</h1>
-							<p class="title is-4">{{product['price']}}rs</p>
+							<p class="title is-4">{{product['price']}} &#8377;</p>
 							<div class="content">
 								{{product['info']}}
 								<br> <br>
@@ -80,7 +80,7 @@ button.button.viewall.is-primary.is-fullwidth{
 					"id" :"pa1",
 					"name":"ProductA",
 					"price" :"35",
-					"info" :"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus",
+					"info" :"Black bracelet style, stainless steel strap with a foldover closure",
 					"img":"img1.jpeg",
 					"url" :"/products/pa1"
 					
@@ -89,7 +89,7 @@ button.button.viewall.is-primary.is-fullwidth{
 					"id" :"pa2",
 					"name":"ProductB",
 					"price" :"55",
-					"info" :"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellu",
+					"info" :"Black bracelet style, stainless steel strap with a foldover closure",
 					"img":"img2.jpeg",
 					"url" :"/products/pa2"
 				},
@@ -97,7 +97,7 @@ button.button.viewall.is-primary.is-fullwidth{
 					"id" :"pa3",
 					"name":"ProductC",
 					"price" :"75",
-					"info" :"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus",
+					"info" :"Black bracelet style, stainless steel strap with a foldover closure",
 					"img":"img3.jpeg",
 					"url" :"/products/pa3"
 				}

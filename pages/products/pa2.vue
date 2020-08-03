@@ -33,8 +33,9 @@
 
 	<div class=" right column">
 		<h1 class="title">{{productname}}</h1>
-		<h3 class="title">{{price}}</h3>
+		<h3 class="title">{{price}} &#8377;</h3>
 		<p class="subtitle">{{info}}</p>
+		<a style="margin-right: 10px;" href="#"><b-button class="buybutton" type="is-info">Add to Cart</b-button></a>
 		<a target="_blank" :href="buylink"><b-button class="buybutton" type="is-primary">Buy Now</b-button></a>
 
 	</div>
@@ -77,9 +78,9 @@
 			return{
 				isImageModalActive: false,
 				productname : "Product B",
-				price :"73rs",
+				price :"73",
 				points :['one','two','three'],
-				info :"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariaturrum.",
+				info :"The basic black-and-gold design of the Wired Men’s Analog Watch makes it a simple, versatile timepiece great for everyday wear. The watch is constructed with a high quality metal case, a stationary bezel, and a comfortable strap which is easily adjustable",
 				buylink : 'https://rzp.io/l/EVY6mt3',
 				image:['http://localhost:3000/products/img1.jpeg','http://localhost:3000/products/img2.jpeg'],
 				indicator: true,

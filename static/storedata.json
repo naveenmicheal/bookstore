@@ -3,7 +3,7 @@
 		"id" :"pa1",
 		"name":"Product A",
 		"price" :"35",
-		"info" :"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus",
+		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
 		"img":"img1.jpeg",
 		"url" :"/products/pa1"
 	},
@@ -11,7 +11,7 @@
 		"id" :"pa2",
 		"name":"Product B",
 		"price" :"55",
-		"info" :"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellu",
+		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
 		"img":"img2.jpeg",
 		"url" :"/products/pa2"
 	},
@@ -19,7 +19,7 @@
 		"id" :"pa3",
 		"name":"Product C",
 		"price" :"75",
-		"info" :"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus",
+		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
 		"img":"img3.jpeg",
 		"url" :"/products/pa3"
 	},
@@ -27,7 +27,7 @@
 		"id" :"pa4",
 		"name":"Product D",
 		"price" :"55",
-		"info" :"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellu",
+		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
 		"img":"img2.jpeg",
 		"url" :"/products/pa4"
 	},
@@ -35,7 +35,7 @@
 		"id" :"pa5",
 		"name":"Product E",
 		"price" :"35",
-		"info" :"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus",
+		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
 		"img":"img1.jpeg",
 		"url" :"/products/pa5"
 	},
@@ -43,7 +43,7 @@
 		"id" :"pa6",
 		"name":"Product F",
 		"price" :"75",
-		"info" :"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus",
+		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
 		"img":"img3.jpeg",
 		"url" :"/products/pa6"
 	}
