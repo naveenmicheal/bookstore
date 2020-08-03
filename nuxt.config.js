@@ -21,7 +21,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: ' Choose from new collection of Watches. Buy Wrist Watches for men, women & kids at best price from Wired Store .' },
-      {property:'og:image',content:'icon.png'}
+      {property:'og:image',content:'/icon.png'}
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
