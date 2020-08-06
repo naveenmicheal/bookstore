@@ -13,7 +13,7 @@
         <img class="image logo" src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/326/3451207326_0bea6f38-773d-4892-82fc-eaea905c5709.png?cb=1596441241">
       </div>
       <h2 id="mobile" class="subtitle">
-         versatile timepiece great for everyday wear
+         A complete customizable Ecommerce app for your business
       </h2>
     </div>
   </section>
