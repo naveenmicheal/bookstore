@@ -1,20 +1,45 @@
 import storedata from '~/static/storedata.json'
-
 export const state = ()=>({
-	storedata : storedata
+	storedata:storedata,
+	cartproduct:[]
 })
-// export const state = () => ({
-//   counter: 0
-// })
+export const mutations ={
 
-// export const getter = {
-// 	storeproducts : state => state.storedata
-// }
+	addtocart(state,data){
+		console.log('AddtoCart Mutation Fired')
+		data.quantity = 1
+		state.cartproduct.push(data)
+	},
+	pluscountcart(state,data){
+		console.log('+++')
+		console.log(data)
+		const result = state.cartproduct.find(item => item.id == data)
+		result.quantity++
+	},
+	minuscountcart(state,data){
+		console.log('---')
+		const result = state.cartproduct.find(item => item.id == data)
+		result.quantity--
+	},
+	removecartitem(state,data){
+		console.log('Remove Item Cart Mutation Fired')
+		state.cartproduct.splice(data,1)
+	},
+	clearcart(state){
+		console.log('ClearCart Mutation Fired')
+		state.cartproduct=[]
+	}
+}
+
 export const getters = {
-  get (state) {
+	homeproducts(state){
+		let result = state.storedata.filter(item => item.featured == true)
+		return result
+	},
+	products (state) {
     return state.storedata
+	 },
+  	getcart (state) {
+    return state.cartproduct
   }
 }
-export const mutations ={}
-
-export const actions ={}

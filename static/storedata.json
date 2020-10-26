@@ -2,50 +2,34 @@
 	{
 		"id" :"pa1",
 		"name":"Product A",
-		"price" :"35",
+		"price" :"10",
 		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
-		"img":"img1.jpeg",
-		"url" :"/products/pa1"
+		"img":["https://wiredstore.now.sh/img1.jpeg"],
+		"featured":true
 	},
 	{
-		"id" :"pa2",
-		"name":"Product B",
-		"price" :"55",
+		"id" :"pb1",
+		"name":"Product BA",
+		"price" :"20",
 		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
-		"img":"img2.jpeg",
-		"url" :"/products/pa2"
+		"img":["https://wiredstore.now.sh/img1.jpeg"],
+		"featured":true
 	},
 	{
-		"id" :"pa3",
+		"id" :"pc1",
 		"name":"Product C",
-		"price" :"75",
+		"price" :"30",
 		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
-		"img":"img3.jpeg",
-		"url" :"/products/pa3"
+		"img":["https://wiredstore.now.sh/img1.jpeg"],
+		"featured":true
 	},
 	{
-		"id" :"pa4",
+		"id" :"pd1",
 		"name":"Product D",
-		"price" :"55",
+		"price" :"40",
 		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
-		"img":"img2.jpeg",
-		"url" :"/products/pa4"
-	},
-	{
-		"id" :"pa5",
-		"name":"Product E",
-		"price" :"35",
-		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
-		"img":"img1.jpeg",
-		"url" :"/products/pa5"
-	},
-	{
-		"id" :"pa6",
-		"name":"Product F",
-		"price" :"75",
-		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
-		"img":"img3.jpeg",
-		"url" :"/products/pa6"
+		"img":["https://wiredstore.now.sh/img1.jpeg"],
+		"featured":false
 	}
 
 ]

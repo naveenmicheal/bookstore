@@ -9,7 +9,7 @@ export default {
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
   */
-  target: 'server',
+  target: 'static',
   loading: { color: 'blue' },
   /*
   ** Headers of the page
@@ -18,13 +18,13 @@ export default {
   head: {
     title: 'Wired Store',
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: ' Choose from new collection of Watches. Buy Wrist Watches for men, women & kids at best price from Wired Store .' },
-      {property:'og:image',content:'/icon.png'}
+    { charset: 'utf-8' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { hid: 'description', name: 'description', content: ' Choose from new collection of Watches. Buy Wrist Watches for men, women & kids at best price from Wired Store .' },
+    {property:'og:image',content:'/icon.png'}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
   /*
@@ -38,6 +38,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+  { src: '~/plugins/vuex-persist', ssr: false }
   ],
   /*
   ** Auto import components
@@ -58,7 +59,7 @@ export default {
     'nuxt-buefy',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-  ],
+    ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

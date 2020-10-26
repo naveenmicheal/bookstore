@@ -18,11 +18,10 @@
 							<div class="content">
 								{{product['info']}}
 								<br> <br>
-								<nuxt-link :to="product.url">
-									<b-button  type="is-primary" expanded>View Product</b-button>
-								</nuxt-link>	
-								
-							</div>
+							<!-- 	<nuxt-link :to="product.url"> -->
+									<b-button tag="nuxt-link" :to="'/product/'+product.id"  type="is-primary" expanded>View Product</b-button>
+			<!-- 					</nuxt-link> -->							
+							</div>	
 						</div>
 					</div>
 				</div>
@@ -74,36 +73,14 @@ button.button.viewall.is-primary.is-fullwidth{
 	export default{
 		data(){
 			return{
-				name : "Hello",
-				products :[
-				{
-					"id" :"pa1",
-					"name":"ProductA",
-					"price" :"35",
-					"info" :"Black bracelet style, stainless steel strap with a foldover closure",
-					"img":"img1.jpeg",
-					"url" :"/products/pa1"
-					
-				},
-				{
-					"id" :"pa2",
-					"name":"ProductB",
-					"price" :"55",
-					"info" :"Black bracelet style, stainless steel strap with a foldover closure",
-					"img":"img2.jpeg",
-					"url" :"/products/pa2"
-				},
-				{
-					"id" :"pa3",
-					"name":"ProductC",
-					"price" :"75",
-					"info" :"Black bracelet style, stainless steel strap with a foldover closure",
-					"img":"img3.jpeg",
-					"url" :"/products/pa3"
-				}
-				]
-			}
+				name : "Hello",		
+			}	
 		},
+		computed:{
+			products: function() {
+				return this.$store.getters["data/homeproducts"]
+			}
+		}
 		
 	}
 </script>
