@@ -123,9 +123,9 @@
 
 				
 			</div>	
-			<div class="clearall">
+			<!-- <div class="clearall">
 					<b-button @click="clearcart">Clear Cart</b-button>
-				</div>
+				</div> -->
 			
 		</div>
 	</div>

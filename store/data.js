@@ -1,6 +1,40 @@
-import storedata from '~/static/storedata.json'
+
 export const state = ()=>({
-	storedata:storedata,
+	storedata:[
+	{
+		"id" :"pa1",
+		"name":"Product A",
+		"price" :"10",
+		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
+		"img":["https://res.cloudinary.com/wiredmarketspace/image/upload/v1601572032/uohgy4qchlrnajyzhsff.jpg"],
+		"featured":true
+	},
+	{
+		"id" :"pb1",
+		"name":"Product BA",
+		"price" :"20",
+		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
+		"img":["https://res.cloudinary.com/wiredmarketspace/image/upload/v1601572032/uohgy4qchlrnajyzhsff.jpg"],
+		"featured":true
+	},
+	{
+		"id" :"pc1",
+		"name":"Product C",
+		"price" :"30",
+		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
+		"img":["https://res.cloudinary.com/wiredmarketspace/image/upload/v1601572032/uohgy4qchlrnajyzhsff.jpg"],
+		"featured":true
+	},
+	{
+		"id" :"pd1",
+		"name":"Product D",
+		"price" :"40",
+		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
+		"img":["https://res.cloudinary.com/wiredmarketspace/image/upload/v1601572032/uohgy4qchlrnajyzhsff.jpg"],
+		"featured":false
+	}
+
+],
 	cartproduct:[]
 })
 export const mutations ={
