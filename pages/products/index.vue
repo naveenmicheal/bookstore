@@ -21,26 +21,50 @@
 					<div class="card-actions">
 						<b-button type="is-primary"  expanded outlined
 						tag="nuxt-link" :to="'/product/'+product.id"
-						 >View Product</b-button>
+						>View Product</b-button>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</template>
+		<bottombar v-if="length >0" id="bbar"/>
+		</div>
+	</template>
 
-<script>
-	export default{
-		data(){
-			return{
-				"hello":"World"
-			}
+	<script>
+		export default{
+			data(){
+				return{
+					"hello":"World"
+				}
+			},
+			computed:{
+				products: function() {
+					return this.$store.getters["data/products"]
+				},
+				length(){
+					return this.$store.getters["data/getcart"].length
+				}
+			},
+			methods:{
+			},
+			mounted(){
+				console.log("mounted TRIGGERED")
+			// this.$store.commit("data/clearcart")	
+			setTimeout(()=>{
+
+			},100)
 		},
-		computed:{
-			products: function() {
-				return this.$store.getters["data/products"]
-			}
-		}
 
 	}
 </script>
+
+<style lang="css" scoped>
+	#bbar{
+    display: none;  
+  }
+  @media only screen and (max-width: 768px) {
+    #bbar{
+    display: block;
+  } 
+  }
+</style>

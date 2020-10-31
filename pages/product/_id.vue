@@ -33,25 +33,6 @@
 		<h1 class="title">{{product.name}}</h1>
 		<h3 class="title">{{product.price}}  &#8377;</h3>
 		<p class="subtitle">{{product.info}}</p>
-		
-		<!-- <b-field class="actions">
-			<p class="control ">
-				<button @click="quantity++" class="button is-success is-light px-5 ">
-					<b-icon icon="plus"></b-icon>
-				</button>
-			</p>
-			<p class="control">
-				<button class="button is-link is-light px-5">
-					Quantity: {{quantity}}
-				</button>
-			</p>
-			<p class="control">
-				<button @click="quantity--" class="button is-info is-light px-5">
-					<b-icon icon="minus"></b-icon>
-				</button>
-			</p>
-		</b-field> -->
-
 		<b-button v-if="!iscart" class="buybutton" type="is-info" @click="addtocart">Add to Cart</b-button>
 		<b-button v-if="iscart" tag="nuxt-link" to="/cart" class="buybutton" type="is-success">Go To cart</b-button>
 
@@ -60,7 +41,8 @@
 		</b-button> -->
 
 	</div>
-</div>
+	<bottombar v-if="length >0" id="bbar"/>
+	</div>
 </template>
 
 <script type="text/javascript">
@@ -81,8 +63,10 @@
 		computed:{
 			product(){
 				return this.$store.getters["data/products"].find(item => item.id == this.$route.params.id)
-			}
-			
+			},
+			length(){
+				return this.$store.getters["data/getcart"].length
+			},
 		},
 		methods:{
 			addtocart(){	
@@ -99,6 +83,7 @@
 					if(incart == false){
 						this.$store.commit("data/addtocart",this.product)
 						this.iscart = true
+
 					}
 					else{
 						console.log("NO COMMIT ")
@@ -114,14 +99,19 @@
 		mounted(){
 			console.log("mounted TRIGGERED")
 			// this.$store.commit("data/clearcart")	
-			let cartbox = this.$store.getters["data/getcart"]
-			cartbox.find(item =>{
-				if(item.id == this.product.id){
-					console.log('Mounted[*] Item in Cart')
-					this.iscart = true
-				}
-			})
-		}
+			setTimeout(()=>{
+				let cartbox = this.$store.getters["data/getcart"]
+				cartbox.find(item =>{
+					if(item.id == this.product.id){
+						console.log('Mounted[*] Item in Cart')
+						this.iscart = true
+					}
+				})
+			},100)
+			
+			
+
+		},
 
 
 	}
@@ -156,5 +146,14 @@
 		padding-top: 3rem;
 	}
 }
+
+#bbar{
+    display: none;  
+  }
+  @media only screen and (max-width: 768px) {
+    #bbar{
+    display: block;
+  } 
+  }
 
 </style>

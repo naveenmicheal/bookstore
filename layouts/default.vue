@@ -2,6 +2,7 @@
   <div>
   	<navbar/>
         <nuxt />
+        
     <footbar/>    
   </div>
 </template>
@@ -18,6 +19,12 @@ export default {
   components :{
   	navbar,
   	footbar
+  },
+  computed:{
+    
   }
 }
 </script>
+
+<style lang="css" scoped>
+</style>

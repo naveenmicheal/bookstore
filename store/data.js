@@ -14,12 +14,12 @@ export const mutations ={
 		console.log('+++')
 		console.log(data)
 		const result = state.cartproduct.find(item => item.id == data)
-		result.quantity++
+		result.quantity = result.quantity + 1
 	},
 	minuscountcart(state,data){
 		console.log('---')
 		const result = state.cartproduct.find(item => item.id == data)
-		result.quantity--
+		result.quantity = result.quantity - 1
 	},
 	removecartitem(state,data){
 		console.log('Remove Item Cart Mutation Fired')
@@ -37,9 +37,9 @@ export const getters = {
 		return result
 	},
 	products (state) {
-    return state.storedata
-	 },
-  	getcart (state) {
-    return state.cartproduct
-  }
+		return state.storedata
+	},
+	getcart (state) {
+		return state.cartproduct
+	}
 }

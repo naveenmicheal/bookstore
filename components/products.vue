@@ -18,10 +18,8 @@
 							<div class="content">
 								{{product['info']}}
 								<br> <br>
-							<!-- 	<nuxt-link :to="product.url"> -->
 									<b-button tag="nuxt-link" :to="'/product/'+product.id"  type="is-primary" expanded>View Product</b-button>
-			<!-- 					</nuxt-link> -->							
-							</div>	
+								</div>	
 						</div>
 					</div>
 				</div>

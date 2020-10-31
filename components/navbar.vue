@@ -2,7 +2,7 @@
     <b-navbar id="navbar" shadow>
         <template slot="brand">
             <b-navbar-item tag="router-link" :to="{ path: '/' }">
-            WIRED STORE
+                WIRED STORE
             </b-navbar-item>
         </template>
         <template slot="end">
@@ -17,7 +17,6 @@
                 <b-tag v-if="cartproducts.length > 0" type="is-primary ml-3">{{cartproducts.length}}</b-tag>
             </b-navbar-item>
         </template>
-
     </b-navbar>
 </template>
 
@@ -32,8 +31,8 @@
 </script>
 
 <style lang="css" scoped>
-    #navbar{
-        padding: 10px;
-    }
+#navbar{
+    padding: 10px;
+}
 </style>
 
