@@ -4,7 +4,7 @@
 		"name":"Product A",
 		"price" :"10",
 		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
-		"img":["https://wiredstore.now.sh/img1.jpeg"],
+		"img":["https://res.cloudinary.com/wiredmarketspace/image/upload/v1601572032/uohgy4qchlrnajyzhsff.jpg"],
 		"featured":true
 	},
 	{
@@ -12,7 +12,7 @@
 		"name":"Product BA",
 		"price" :"20",
 		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
-		"img":["https://wiredstore.now.sh/img1.jpeg"],
+		"img":["https://res.cloudinary.com/wiredmarketspace/image/upload/v1601572032/uohgy4qchlrnajyzhsff.jpg"],
 		"featured":true
 	},
 	{
@@ -20,7 +20,7 @@
 		"name":"Product C",
 		"price" :"30",
 		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
-		"img":["https://wiredstore.now.sh/img1.jpeg"],
+		"img":["https://res.cloudinary.com/wiredmarketspace/image/upload/v1601572032/uohgy4qchlrnajyzhsff.jpg"],
 		"featured":true
 	},
 	{
@@ -28,7 +28,7 @@
 		"name":"Product D",
 		"price" :"40",
 		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
-		"img":["https://wiredstore.now.sh/img1.jpeg"],
+		"img":["https://res.cloudinary.com/wiredmarketspace/image/upload/v1601572032/uohgy4qchlrnajyzhsff.jpg"],
 		"featured":false
 	}
 
