@@ -6,7 +6,7 @@ export const state = ()=>({
 		"name":"Product A",
 		"price" :"10",
 		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
-		"img":["https://res.cloudinary.com/wiredmarketspace/image/upload/v1601572032/uohgy4qchlrnajyzhsff.jpg"],
+		"img":["https://res.cloudinary.com/wiredmarketspace/image/upload/v1604941922/DemoStore/img1_dire7p.jpg"],
 		"featured":true
 	},
 	{
@@ -14,7 +14,7 @@ export const state = ()=>({
 		"name":"Product BA",
 		"price" :"20",
 		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
-		"img":["https://res.cloudinary.com/wiredmarketspace/image/upload/v1601572032/uohgy4qchlrnajyzhsff.jpg"],
+		"img":["https://res.cloudinary.com/wiredmarketspace/image/upload/v1604941931/DemoStore/img2_gqvvwh.jpg"],
 		"featured":true
 	},
 	{
@@ -22,7 +22,7 @@ export const state = ()=>({
 		"name":"Product C",
 		"price" :"30",
 		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
-		"img":["https://res.cloudinary.com/wiredmarketspace/image/upload/v1601572032/uohgy4qchlrnajyzhsff.jpg"],
+		"img":["https://res.cloudinary.com/wiredmarketspace/image/upload/v1604941949/DemoStore/img3_iavehb.jpg"],
 		"featured":true
 	},
 	{
@@ -30,7 +30,7 @@ export const state = ()=>({
 		"name":"Product D",
 		"price" :"40",
 		"info" :"Black bracelet style, stainless steel strap with a foldover closure",
-		"img":["https://res.cloudinary.com/wiredmarketspace/image/upload/v1601572032/uohgy4qchlrnajyzhsff.jpg"],
+		"img":["https://res.cloudinary.com/wiredmarketspace/image/upload/v1604942074/DemoStore/pexels-photo-1546333_a44gmb.jpg"],
 		"featured":false
 	}
 
