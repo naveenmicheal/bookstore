@@ -38,7 +38,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-  { src: '~/plugins/vuex-persist', ssr: false }
+  // { src: '~/plugins/vuex-persist', ssr: false }
+  { src: '~/plugins/syncdata.js',mode: 'client' }
   ],
   /*
   ** Auto import components
@@ -71,5 +72,9 @@ export default {
   */
   build: {
   },
+
+  // router: {
+  //   middleware: 'sync'
+  // }
 
 }

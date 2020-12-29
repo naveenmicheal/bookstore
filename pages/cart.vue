@@ -6,22 +6,22 @@
 			<div class="columns">
 				<div class="column" >
 					<h1 v-if="products.length == 0" class="title has-text-centered mt-5">Cart is Empty</h1>
-					<div class="columns" v-for="product in products" :key="product.id">
+					<div class="columns" v-for="product in products" :key="product._id">
 						<div class="column" >
 							<div class="card">  
 								<div class="card-content">
 									<div class="columns">
 										<div class="column is-one-third">
-											<img :src="product.img">
+											<img :src="product.media[0].url">
 
 										</div>
 										<div class="column">
-											<p class="title is-4 mb-4"><strong>{{product.name}}</strong></p>
-											<p class="subtitle is-5 pt-4 mb-1"><strong>Price: {{product.price}} &#8377;</strong></p>
-											<p class="subtitle is-6 pt-3">Quantity: {{product.quantity}}  &times; {{product.price}} = {{product.price * product.quantity}} &#8377;</p>
+											<p class="title is-4 mb-4"><strong>{{product.productname}}</strong></p>
+											<p class="subtitle is-5 pt-4 mb-1"><strong>Price: {{product.productprice}} &#8377;</strong></p>
+											<p class="subtitle is-6 pt-3">Quantity: {{product.quantity}}  &times; {{product.productprice}} = {{product.productprice * product.quantity}} &#8377;</p>
 											<b-field class="actions">
 												<p class="control">
-													<button v-if="product.quantity >1" @click="minuscountcart(product.id)" class="button is-info is-light px-5">
+													<button v-if="product.quantity >1" @click="minuscountcart(product._id)" class="button is-info is-light px-5">
 														<b-icon icon="minus"></b-icon>
 													</button>
 												</p>
@@ -32,7 +32,7 @@
 													</button>
 												</p>
 												<p class="control ">
-													<button @click="pluscountcart(product.id)" class="button is-success is-light px-5 ">
+													<button @click="pluscountcart(product._id)" class="button is-success is-light px-5 ">
 														<b-icon icon="plus"></b-icon>
 													</button>
 												</p>
@@ -41,7 +41,7 @@
 											<div class="content">   
 
 											<!-- 	<p>{{}}</p> --> 
-												<b-button icon-right="delete" @click="removeitemcart(product.id)" type="is-danger is-light">Remove From the Cart</b-button>
+												<b-button icon-right="delete" @click="removeitemcart(product._id)" type="is-danger is-light">Remove From the Cart</b-button>
 
 
 											</div>
@@ -74,16 +74,16 @@
 
 					<div class="columns" v-for="product in products" :key="product.id">
 						<div class="column is-two-fifths">
-							<p>{{product.name}}</p>
+							<p>{{product.productname}}</p>
 						</div>
 						<div class="column">
-							<p>{{product.price}} &#8377;</p>
+							<p>{{product.productprice}} &#8377;</p>
 						</div>
 						<div class="column">
 							<p>{{product.quantity}}</p>
 						</div>
 						<div class="column">
-							<p>{{product.price * product.quantity}}  &#8377;</p>
+							<p>{{product.productprice * product.quantity}}  &#8377;</p>
 						</div>
 					</div>
 					<hr>
@@ -150,7 +150,7 @@
 				this.products = this.$store.getters["data/getcart"]
 			},
 			removeitemcart(e){
-				let result = this.products.findIndex(item => item.id == e)
+				let result = this.products.findIndex(item => item._id == e)
 				this.$store.commit("data/removecartitem",result)
 				this.products = []
 				this.products = this.$store.getters["data/getcart"]
@@ -165,7 +165,7 @@
 			totalprice(){
 				let totalprice = 0
 				this.products.forEach(item =>{
-					totalprice += parseInt(item.price) * parseInt(item.quantity)
+					totalprice += parseInt(item.productprice) * parseInt(item.quantity)
 				})  
 				return parseInt(totalprice)
 			}
@@ -178,8 +178,8 @@
 					console.log("retry")
 					this.products = this.$store.getters["data/getcart"]
 				},100)
-			} 
-		}
+			}
+		},
 	}
 </script>
 

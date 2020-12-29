@@ -94,7 +94,7 @@
 				</b-radio>
 			</div>
 			<p class="subtitle is-4">Total Price: {{totalprice}} &#8377;</p>
-			<b-button :loading="loading" @click="payment(totalprice)" type="is-info" expanded>Place a Order</b-button>
+			<b-button :loading="loading" @click="initpayment()" type="is-info" expanded>Place a Order</b-button>
 
 		</div>
 	</div>
@@ -103,6 +103,7 @@
 </template>
 
 <script type="text/javascript">
+	import axios from "axios"
 	export default{
 		head(){
 			return{
@@ -127,70 +128,115 @@
 				},
 				loading:false,
 				paymentoption:'razorpay',
-				result:''
+				result:'',
+				storeid:"PRGgD6Mchkyf_Utkp2013YmLdcHtDY",
+				orderid:""
 			}
 		},
 		methods:{
-			payment: async function (e) {
+			initpayment: async function(e){
 				this.loading = !this.loading
 				let data = await this.$axios.$post(
-					"https://wiredapi.herokuapp.com/payment/pay",{
-						amount: this.totalprice
-					})
-				console.log(data)
-				this.result = data
-				let options = {	
-					"key":"rzp_test_GrVH3IIHb1f13O",
-					"amount":data.amount,
-					"currency":data.currency,
-					"order_id":data.id,
-					"handler": function (response){
-						console.log(`Payment Id: ${response.razorpay_payment_id},
-						 Order Id: ${response.razorpay_order_id},
-						 Signature: ${response.razorpay_signature}`)
-						alert('Success')
-					},
-					"prefill": {
-						"name": this.address.name,
-						"email": this.address.email,
+					"https://wiredapi.herokuapp.com/orders/create",
+					{
+						"customername": this.address.name,
+						"customeremail":this.address.email,
 						"contact": this.address.contact,
-						"location": this.address.location
+						"houseaddress": this.address.house,
+						"location": this.address.location,
+						"town": this.address.town,
+						"city": this.address.city,
+						"state": this.address.state,
+						"pincode": this.address.pincode,
+						"storeid":this.storeid,
+						"items":this.products,
+						"paid":false,
+						"paymentid": null,
+						"paymenthash": null,
 					}
+					)
+				console.log(data)
+				if(data.status === "success"){
+					let options = {	
+						"key":"rzp_test_GrVH3IIHb1f13O",
+						"amount":data.totalprice,
+						"currency":"INR",
+						"order_id":data.rzorderid,
+						"handler": function (response){
+							axios.post("https://wiredapi.herokuapp.com/orders/updatepayment",
+							{
 
+								"orderid":data.id,
+								"rzorderid" : data.rzorderid,
+								"paymentid":response.razorpay_payment_id,
+								"signature":response.razorpay_signature
+
+							})
+							.then(result=>{
+								console.log(result.data)
+							})
+							.catch(err =>{
+								alert("Error")
+							})
+							console.log(`Payment Id: ${response.razorpay_payment_id},
+								Order Id: ${response.razorpay_order_id},
+								Signature: ${response.razorpay_signature}`)
+						},
+						"prefill": {
+							"name": data.name,
+							"email": data.email,
+							"contact":this.address.contact,
+						}
+					}
+					var rzpay = new Razorpay(options);
+					rzpay.on('payment.failed', function (response){
+						Alert("Payment Failed")
+						console.log(`Code: ${response.error.code}, 
+							Description ${response.error.description}
+							source : ${response.error.source} step ${response.error.step}
+							Reason ${response.error.reason}
+							Metadata ${response.error.metadata}`)
+						alert('Payment Failed');
+					});
+					rzpay.open();
+					this.loading = !this.loading
 				}
-				var rzp1 = new Razorpay(options);
-				rzp1.on('payment.failed', function (response){
-					console.log(`Code: ${response.error.code}, 
-						Description ${response.error.description}
-						source : ${response.error.source} step ${response.error.step}
-						Reason ${response.error.reason}
-						Metadata ${response.error.metadata}`)
-					alert('Payment Failed');
-				});
-				rzp1.open();
-				this.loading = !this.loading
+				else{
+					alert("Error, Input Data was Invalidated")
+				}
 			}
 		},
 		computed:{
 			products(){
-				return this.$store.getters["data/getcart"]
-			},
-			totalprice(){
-				let total = 0
-				this.products.forEach(item =>{
-					total += parseInt((item.price * item.quantity))
+				let checkout = []
+				let a = this.$store.getters["data/getcart"]
+				a.map(item =>{
+					console.log(item)
+					let i ={
+						id:item._id,
+						quantity:item.quantity
+					}
+					checkout.push(i)
 				})
-				return total
+				return checkout
+					// return this.$store.getters["data/getcart"]
+				},
+				totalprice(){
+					let total = 0
+					this.$store.getters["data/getcart"].forEach(item =>{
+						total += parseInt((item.productprice * item.quantity))
+					})
+					return total
+				},
+			},
+			mounted(){
+				this.$axios.$get("https://wiredapi.herokuapp.com/")
 			}
-		},
-		mounted(){
-			this.$axios.$get("https://wiredapi.herokuapp.com/")
 		}
-	}
-</script>
+	</script>
 
-<style lang="css" scoped>
-.textarea:not([rows]){
-	min-height: 20px;
-}
+	<style lang="css" scoped>
+	.textarea:not([rows]){
+		min-height: 20px;
+	}
 </style>

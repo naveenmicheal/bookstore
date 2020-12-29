@@ -1,7 +1,7 @@
 <template>
   <div>
     <hero/>
-    <products/>
+    <!-- <products/> -->
     <about/>
     <bottombar v-if="length >0" id="bbar"/>
   <div>
@@ -16,12 +16,13 @@ import products from '~/components/products'
 import about from '~/components/about'
 export default {
   name: 'Home',
-  async asyncData(context) {
-  },
   computed:{
     length(){
       return this.$store.getters["data/getcart"].length
-    }
+    } 
+  },
+  mounted(){
+    console.log("BBook")
   },
   components: {
     hero,
