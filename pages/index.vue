@@ -29,13 +29,6 @@ export default {
     products,
     about
   },
-  // mounted(){
-  //  this.$axios.$get('https://wiredapi.herokuapp.com/store/ul1jtVPLEh3c73V44y_Jc410pqQpJ6')
-  //  .then(data=>{
-  //   this.$store.commit("data/store",data.products)
-  //  })
-  //  .catch(err=>console.log(err))
-  // }
 }
 </script>
 

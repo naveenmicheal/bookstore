@@ -27,7 +27,7 @@
    },
    created(){
         axios.get("https://wiredapi.herokuapp.com/store/PRGgD6Mchkyf_Utkp2013YmLdcHtDY").then(data =>{
-        console.log(data.data)
+        // console.log(data.data)
         this.$store.commit("data/addproducts",data.data.products)
       })
     console.log(23)

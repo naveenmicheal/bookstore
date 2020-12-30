@@ -99,6 +99,45 @@
 		</div>
 	</div>
 </div>
+
+<div class="modal " :class="{'is-active':successpaymentmodel}">
+	<div class="modal-background"></div>
+	<div class="modal-card">
+		<header class="modal-card-head">
+			<p class="modal-card-title ">Payment Success</p>
+		</header>
+		<section class="modal-card-body">
+			
+			<!-- <b-table 
+			:data="this.products" 
+			:columns="[
+			{
+				field: 'id',
+				label: 'Product Name',
+			},
+			{
+				field: 'quantity',
+				label: 'Quantity',
+			},
+			]
+			"></b-table> -->
+			<div class="media-content">
+				<p class="title is-4 has-text-centered">{{this.finaltotalprice}} &#8377; Paid succesfully</p>
+				<p class="title is-5">Payment Id</p>
+				<p class="subtitle is-3 has-text-centered">{{this.paymentid}}</p>
+				<li>We will contact and send your items in next 24 Hours</li>
+				<li>If any problem call me 9987654321</li>
+			</div>
+
+
+		</section>
+		<footer class="modal-card-foot">
+			<button class="button is-success">Download Recipt</button>
+			<button class="button">Close</button>
+		</footer>
+	</div>
+</div>
+
 </div>
 </template>
 
@@ -130,7 +169,12 @@
 				paymentoption:'razorpay',
 				result:'',
 				storeid:"PRGgD6Mchkyf_Utkp2013YmLdcHtDY",
-				orderid:""
+				orderid:"",
+
+				successpaymentmodel:false,
+				paymentid:'',
+				finaltotalprice:''
+
 			}
 		},
 		methods:{
@@ -159,7 +203,7 @@
 				if(data.status === "success"){
 					let options = {	
 						"key":"rzp_test_GrVH3IIHb1f13O",
-						"amount":data.totalprice,
+						"amount":data.finaltotalprice,
 						"currency":"INR",
 						"order_id":data.rzorderid,
 						"handler": function (response){
@@ -174,9 +218,15 @@
 							})
 							.then(result=>{
 								console.log(result.data)
+								if(result.data.status === "success"){
+									localStorage.clear()
+									localStorage.setItem("Data",JSON.stringify(result.data))
+									document.location.pathname = "/success"
+								}
+
 							})
 							.catch(err =>{
-								alert("Error")
+								console.log(err)
 							})
 							console.log(`Payment Id: ${response.razorpay_payment_id},
 								Order Id: ${response.razorpay_order_id},
@@ -199,7 +249,7 @@
 						alert('Payment Failed');
 					});
 					rzpay.open();
-					this.loading = !this.loading
+					// this.loading = !this.loading
 				}
 				else{
 					alert("Error, Input Data was Invalidated")
@@ -240,3 +290,4 @@
 		min-height: 20px;
 	}
 </style>
+
