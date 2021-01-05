@@ -28,9 +28,9 @@
 		},
 		mounted(){
 			let data = JSON.parse(localStorage.getItem("Data"))
-			console.log(data)
-			this.totalamount = data.totalamount
-			this.paymentid = data.paymentid
+			console.log(data.data)
+			this.totalamount = data.data.totalprice
+			this.paymentid = data.data.paymentid
 		}
 	}
 </script>

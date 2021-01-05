@@ -100,43 +100,6 @@
 	</div>
 </div>
 
-<div class="modal " :class="{'is-active':successpaymentmodel}">
-	<div class="modal-background"></div>
-	<div class="modal-card">
-		<header class="modal-card-head">
-			<p class="modal-card-title ">Payment Success</p>
-		</header>
-		<section class="modal-card-body">
-			
-			<!-- <b-table 
-			:data="this.products" 
-			:columns="[
-			{
-				field: 'id',
-				label: 'Product Name',
-			},
-			{
-				field: 'quantity',
-				label: 'Quantity',
-			},
-			]
-			"></b-table> -->
-			<div class="media-content">
-				<p class="title is-4 has-text-centered">{{this.finaltotalprice}} &#8377; Paid succesfully</p>
-				<p class="title is-5">Payment Id</p>
-				<p class="subtitle is-3 has-text-centered">{{this.paymentid}}</p>
-				<li>We will contact and send your items in next 24 Hours</li>
-				<li>If any problem call me 9987654321</li>
-			</div>
-
-
-		</section>
-		<footer class="modal-card-foot">
-			<button class="button is-success">Download Recipt</button>
-			<button class="button">Close</button>
-		</footer>
-	</div>
-</div>
 
 </div>
 </template>
@@ -217,6 +180,7 @@
 
 							})
 							.then(result=>{
+								console.log("OHHHHHHHH")
 								console.log(result.data)
 								if(result.data.status === "success"){
 									localStorage.clear()
